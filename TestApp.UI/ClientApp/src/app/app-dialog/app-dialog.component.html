@@ -1,0 +1,104 @@
+<form [formGroup]="userForm" (ngSubmit)="saveUser()">
+  <div class="row">
+
+  </div>
+  <div class="col-md-6">
+    <mat-form-field class="i-width">
+      <mat-label>Username</mat-label>
+      <input type="text"
+             matInput
+             name="username"
+             formControlName="username"
+             required>
+      <mat-error *ngIf="userForm.get('username').hasError('required')">
+        This field is required
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="col-md-6">
+    <mat-form-field class="i-width">
+      <mat-label>Password</mat-label>
+      <input type="password"
+             matInput
+             name="password"
+             formControlName="password"
+             required>
+      <mat-error *ngIf="userForm.get('password').hasError('required')">
+        This field is required
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div class="col-md-6">
+    <mat-form-field class="i-width">
+      <mat-label>FirstName</mat-label>
+      <input type="text"
+             matInput
+             name="firstName"
+             formControlName="firstName"
+             required>
+      <mat-error *ngIf="userForm.get('firstName').hasError('required')">
+        This field is required
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div class="col-md-6">
+    <mat-form-field class="i-width">
+      <mat-label>LastName</mat-label>
+      <input type="text"
+             matInput
+             name="lastName"
+             formControlName="lastName"
+             required>
+      <mat-error *ngIf="userForm.get('lastName').hasError('required')">
+        This field is required
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div class="col-md-6">
+    <mat-form-field class="i-width">
+      <mat-label>E-Mail</mat-label>
+      <input type="email"
+             matInput
+             name="eMail"
+             formControlName="eMail"
+             required>
+      <mat-error *ngIf="userForm.get('eMail').hasError('required')">
+        This field is required
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="col-md-6">
+    <mat-form-field class="i-width">
+      <mat-label>Phone</mat-label>
+      <input type="text"
+             matInput
+             name="phone"
+             formControlName="phone"
+             required>
+      <mat-error *ngIf="userForm.get('phone').hasError('required')">
+        This field is required
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+
+  <div class="row btn-margin navigate-btn">
+    <button class="col-md-3"
+            title="Save"
+            mat-stroked-button
+            color="primary"
+            [disabled]="!userForm.valid"
+            type="submit">
+      <mat-icon>check</mat-icon>
+    </button>
+    <button class="col-md-3"
+            type="button"
+            title="Cancel"
+            mat-raised-button
+            (click)="matDialogRef.close()">
+      <mat-icon>cancel</mat-icon>
+    </button>
+  </div>
+</form>
